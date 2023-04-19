@@ -1,4 +1,3 @@
-import DroppingArea from '@/app/Components/DroppingArea/DroppingArea';
 import Folder from '@/app/Components/Folder/Folder';
 
 export default function Template({ children }: { children: React.ReactNode }) {
