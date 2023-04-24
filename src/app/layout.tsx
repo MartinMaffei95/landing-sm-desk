@@ -3,6 +3,7 @@ import './globals.css';
 import { Open_Sans } from 'next/font/google';
 
 import DirectAccess from '@/app/Components/DirectAccess/DirectAccess';
+import { getClientNames } from '@/app/services/get-clients-names.service';
 
 export const metadata = {
   title: 'SocialMedia1989',
@@ -12,7 +13,7 @@ const openSans = Open_Sans({
   subsets: ['cyrillic', 'latin'],
   weight: ['300', '400'],
 });
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

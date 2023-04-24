@@ -1,4 +1,13 @@
 @tailwind base;
+/* @import './styles/globalWpStyle.style.css';
+@import './styles/block-library/classic.css';
+@import './styles/block-library/common.css';
+@import './styles/block-library/editor.css';
+@import './styles/block-library/elements.css';
+@import './styles/block-library/reset.css';
+@import './styles/block-library/theme.css';
+@import './styles/block-library/style.css'; */
+
 @tailwind components;
 @tailwind utilities;
 
@@ -25,3 +34,51 @@
 .folder-top-bar-buttons_button {
   @apply hover:bg-neutral-600 w-full h-full px-4 flex items-center justify-center;
 }
+.wp-block-group {
+  @apply flex gap-2;
+}
+.wp-block-group > * {
+  flex: 1 1 50%;
+}
+.is-content-justification-left {
+  justify-content: left;
+}
+.is-nowrap {
+  flex-wrap: nowrap;
+}
+.is-layout-flex .wp-container-1 {
+}
+
+.wp-block-gallery {
+  @apply grid grid-cols-4 auto-rows-fr gap-2;
+}
+
+.wp-block-gallery .wp-block-image {
+  @apply border flex h-full  justify-center items-center border-neutral-200 bg-slate-400 relative;
+}
+.wp-block-gallery .wp-block-image .wp-element-caption {
+  @apply absolute bottom-0 left-0 w-full bg-black text-white;
+}
+
+.wp-block-columns {
+  @apply flex flex-wrap gap-2;
+}
+.is-layout-flex {
+}
+.wp-container-9 {
+}
+
+.html-wp-content {
+  @apply p-8 flex flex-col justify-center items-center;
+}
+.html-wp-content p {
+  @apply self-start m-2;
+}
+.wp-block-image .size-full {
+}
+
+.has-background {
+  @apply w-full text-center p-4;
+}
+/* .has-large-font-size {
+} */

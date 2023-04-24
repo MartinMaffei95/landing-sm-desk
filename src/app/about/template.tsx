@@ -17,7 +17,7 @@ export default async function Template({
   const menuNodes = data?.menuItems?.nodes?.menuNodes || null;
   return (
     <main className="folder-area flex min-h-screen relative z-20 p-4">
-      <Folder posts={flatListToHierarchical(menuNodes)} folderName="Clients">
+      <Folder posts={flatListToHierarchical(menuNodes)} folderName="Nosotros">
         {children}
       </Folder>
     </main>

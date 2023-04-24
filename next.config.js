@@ -3,7 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  output: 'standalone',
+  images: {
+    domains: ['localhost', 'https://socialmedia1989.net/graphql'],
+  },
 };
 
 module.exports = nextConfig;
