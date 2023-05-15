@@ -5,7 +5,7 @@ export const getMenu = async () => {
     headers: {
       'Content-Type': 'application/json',
     },
-
+    next: { revalidate: 10 },
     body: JSON.stringify({
       query: `
             {
