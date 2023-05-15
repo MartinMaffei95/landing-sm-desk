@@ -9,22 +9,30 @@ export const getMenu = async () => {
     body: JSON.stringify({
       query: `
             {
-            menuItems(where:{location:PRIMARY}){
+            menuItems(where:{location:PRIMARY} first:1500){
             nodes{
                 key:id
                 parentId
                 title:label
                 url
+                attachement {        
+                  icon {
+                    mediaItemUrl
+                  }
+                }
             }
             }
         }
     `,
     }),
   });
-  console.log(res);
+
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
   }
-  return await res.json();
+  const data = await res.json();
+  console.log(data.data.menuItems.nodes);
+
+  return data;
 };

@@ -14,9 +14,9 @@ export default async function Template({
   //   },
   // } = await getMenu();
   const data = await getMenu();
-  const menuNodes = data?.menuItems?.nodes?.menuNodes || null;
+  const menuNodes = data?.data?.menuItems?.nodes || null;
   return (
-    <main className="folder-area flex min-h-screen relative z-20 p-4">
+    <main className="folder-area flex min-h-screen z-20 p-4 overflow-hidden pointer-events-none">
       <Folder posts={flatListToHierarchical(menuNodes)} folderName="Clients">
         {children}
       </Folder>

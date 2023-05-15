@@ -4,7 +4,11 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['localhost', 'https://socialmedia1989.net/graphql'],
+    domains: [
+      'localhost',
+      'https://socialmedia1989.net/graphql',
+      'sm.dreamsite.tech',
+    ],
   },
 };
 

@@ -1,7 +1,8 @@
-import LoaderFolder from '@/app/Components/Folder/LoaderFolder';
-
+import MediaPlayerWindow from '@/app/Components/MediaPlayer/MediaPlayerWindow';
 export default function Home() {
   return (
-    <main className="folder-area flex min-h-screen relative z-20 p-4"></main>
+    <main className="folder-area flex min-h-screen z-10 p-4 overflow-hidden pointer-events-none">
+      <MediaPlayerWindow />
+    </main>
   );
 }

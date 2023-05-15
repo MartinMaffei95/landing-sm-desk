@@ -13,7 +13,6 @@ export const flatListToHierarchical = (
   data: menuItem[] = [],
   { idKey = 'key', parentKey = 'parentId', childrenKey = 'children' }: any = {}
 ) => {
-  console.log(data);
   if (!data) return null;
   const tree: Array<any> = [];
   const childrenOf: any = {};

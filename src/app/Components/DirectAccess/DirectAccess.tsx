@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FcFolder, FcOpenedFolder } from 'react-icons/fc';
 import { Inter } from 'next/font/google';
 import { useRouter, usePathname } from 'next/navigation';
+import Wicon from '@/app/Components/WIcon/Wicon';
 const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
@@ -38,12 +39,21 @@ const DirectAccess = ({ name, icon, route = '/' }: Props) => {
       <div
         className={`flex flex-col justify-center items-center w-full select-none`}
       >
-        {pathname === route ? (
-          <FcOpenedFolder className="text-6xl" />
+        {icon ? (
+          <Wicon name={name} size={48} icon_route={icon} />
+        ) : pathname === route ? (
+          <Wicon
+            name={name}
+            size={48}
+            icon_route="/ico/w98/ico/directory_open.ico"
+          />
         ) : (
-          <FcFolder className="text-6xl" />
+          <Wicon
+            name={name}
+            size={48}
+            icon_route="/ico/w98/ico/directory_closed.ico"
+          />
         )}
-        <p>{name}</p>
       </div>
     </div>
   );

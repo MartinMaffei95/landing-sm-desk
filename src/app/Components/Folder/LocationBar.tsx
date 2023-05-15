@@ -1,12 +1,25 @@
+import Wicon from '@/app/Components/WIcon/Wicon';
 import React from 'react';
 import { FcFolder } from 'react-icons/fc';
 import { MdChevronRight } from 'react-icons/md';
 
 const LocationBar = ({ adress }: { adress: string }) => {
   return (
-    <div className="text-neutral-100 bg-neutral-900 flex w-full p-2">
-      <div className="flex items-center justify-start border border-neutral-700 w-full p-1">
-        <FcFolder />
+    <div
+      className={`flex w-full p-2 ${
+        true
+          ? 'text-neutral-950 bg-neutral-400'
+          : 'text-neutral-100 bg-neutral-900'
+      }`}
+    >
+      Direccion
+      <div
+        className={`flex items-center justify-start  w-full p-1 ${
+          true ? 'inlined bg-neutral-100' : 'border border-neutral-700'
+        }`}
+      >
+        <Wicon size={16} />
+
         <LocationText adress={adress} />
       </div>
     </div>
