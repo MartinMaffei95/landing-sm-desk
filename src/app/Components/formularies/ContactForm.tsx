@@ -43,7 +43,7 @@ const ContactForm = () => {
       .then((data) => console.log(data));
   };
   return (
-    <div>
+    <>
       <div className="w-full flex flex-col justify- items-center text-center m-4 ">
         <h2 className="text-4xl font-bold">Contactate con nosotros!</h2>
         <p className="text-2xl tracking-wide">
@@ -75,7 +75,7 @@ const ContactForm = () => {
         />
         <input type="submit" />
       </form>
-    </div>
+    </>
   );
 };
 

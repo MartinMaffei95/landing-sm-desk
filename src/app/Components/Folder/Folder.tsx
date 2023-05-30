@@ -6,14 +6,24 @@ import { Rnd } from 'react-rnd';
 import LocationBar from '@/app/Components/Folder/LocationBar';
 import AsideMenu from '@/app/Components/Folder/AsideMenu';
 import useResize from '@/hooks/useResize';
+import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons';
+import { FlatListItem } from '@/interfaces';
 
-type Props = { children: React.ReactNode; folderName: string; posts?: any };
-const Folder = ({ children, folderName = '', posts }: Props) => {
+type Props = {
+  children: React.ReactNode;
+  folderName: string;
+  posts?: FlatListItem[];
+  executables?: React.ReactNode;
+};
+const Folder = ({ children, folderName = '', posts, executables }: Props) => {
   // const [size, setSize] = useState({ width: 800, height: 450 });
   const { size, setSize } = useResize();
 
   let pathname = usePathname();
   let params = useParams();
+
+  console.log();
+
   return (
     <Rnd
       style={{
@@ -35,7 +45,7 @@ const Folder = ({ children, folderName = '', posts }: Props) => {
       }}
     >
       <div
-        className={`min-w-full  min-h-full h-full overflow-hidden  select-none folder-w98-style`}
+        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col`}
       >
         {/* TOP BAR */}
         <TopBar folderName={folderName} />
@@ -44,11 +54,18 @@ const Folder = ({ children, folderName = '', posts }: Props) => {
         <LocationBar adress={pathname} />
 
         {/* FOLDER VIEW */}
-        <div className="flex h-full w-full">
+        <div className="folder-grid-area">
           {/* ASIDE MENU */}
           <AsideMenu entries={posts} />
           {/* MAIN VIEW */}
-          <div className="text-neutral-900  basis-3/4 bg-neutral-100 outlined">
+          <div className="text-neutral-900   bg-neutral-100  folder-main">
+            <FolderMainIcons
+              entries={
+                posts?.find((entry: FlatListItem) =>
+                  entry.title.includes(pathname.slice(1))
+                ) || null
+              }
+            />
             {children}
           </div>
         </div>

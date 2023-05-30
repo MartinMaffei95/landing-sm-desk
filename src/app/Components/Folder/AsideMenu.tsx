@@ -18,11 +18,11 @@ const AsideMenu = ({ entries }: { entries: any }) => {
       // W10
       // className="text-neutral-100 bg-neutral-900 basis-1/4"
       // W98
-      className="text-neutral-950 bg-neutral-100 basis-1/4  outlined"
+      className="text-neutral-950 bg-neutral-100  folder-aside border-r-2 border-r-neutral-500"
     >
       <ul>
         {entries?.map((section: any) => (
-          <li className="flex items-center gap-1" key={section.key}>
+          <li className="flex items-center gap-1 " key={section.key}>
             <div className="">
               <div
                 onClick={() => {
@@ -44,19 +44,19 @@ const AsideMenu = ({ entries }: { entries: any }) => {
                   <VscBlank />
                 )}
                 <Wicon size={16} />
-                <p className="text-ellipsis overflow-hidden ">
-                  {section?.title}
-                </p>
+                <p className=" overflow-hidden truncate">{section?.title}</p>
               </div>
               {section?.children && !openTabs[section?.key] ? (
                 <ul>
                   {section?.children?.map((child: any) => (
-                    <li className="flex  items-center gap-1 " key={child?.key}>
+                    <li
+                      className="flex flex-1  items-center gap-1 "
+                      key={child?.key}
+                    >
                       {child?.attachement?.icon?.mediaItemUrl ? (
                         <>
-                          <VscBlank />
-                          <VscBlank />
-                          <Wicon size={16} />
+                          <VscBlank style={{ minWidth: 16 }} />
+                          <VscBlank style={{ minWidth: 16 }} />
 
                           <Image
                             src={child?.attachement?.icon?.mediaItemUrl}
@@ -67,8 +67,8 @@ const AsideMenu = ({ entries }: { entries: any }) => {
                         </>
                       ) : (
                         <>
-                          <VscBlank />
-                          <VscBlank />
+                          <VscBlank style={{ minWidth: 16 }} />
+                          <VscBlank style={{ minWidth: 16 }} />
                           <Wicon size={16} />
                         </>
                       )}

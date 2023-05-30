@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
-import { FcFolder, FcOpenedFolder } from 'react-icons/fc';
 import { Inter } from 'next/font/google';
 import { useRouter, usePathname } from 'next/navigation';
 import Wicon from '@/app/Components/WIcon/Wicon';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import { mq } from '@/config/mediaQueries';
 const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
@@ -15,6 +16,7 @@ type Props = {
 const DirectAccess = ({ name, icon, route = '/' }: Props) => {
   let router = useRouter();
   const pathname = usePathname();
+  const { isPhone, isTablet } = useMediaQuery(mq);
   const [select, setSelect] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(pathname === route);
   const handleSelect = () => {
@@ -30,11 +32,11 @@ const DirectAccess = ({ name, icon, route = '/' }: Props) => {
   };
   return (
     <div
-      onClick={handleSelect}
+      onClick={isPhone || isTablet ? openFolder : handleSelect}
       onDoubleClick={openFolder}
       className={`flex flex-col justify-center items-center  ${
         select ? 'bg-neutral-300 border-blue-400 border' : 'none'
-      } bg-opacity-50 border-none px-4`}
+      } bg-opacity-50 border-none px-4 focus-visible:bg-red-500`}
     >
       <div
         className={`flex flex-col justify-center items-center w-full select-none`}

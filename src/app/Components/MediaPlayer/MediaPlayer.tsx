@@ -49,7 +49,7 @@ const MediaPlayer = () => {
 
   return (
     <div className="bg-neutral-900 flex flex-col w-full h-full text-neutral-50">
-      <div className="basis-4/6 flex p-none ">
+      <div className="basis-4/6 flex p-none justify-center">
         {hasWindow && (
           <ReactPlayer
             height="100%"
@@ -65,7 +65,7 @@ const MediaPlayer = () => {
         <div className="h-4 w-full bg-neutral-200 inlined "> </div>
         <ControlsSection actions={player} />
       </div>
-      <div className="basis-1/6">Text-Box</div>
+      <div className="basis-1/6 text-lime-600 ">Somos_SocialMedia1989.avi</div>
     </div>
   );
 };

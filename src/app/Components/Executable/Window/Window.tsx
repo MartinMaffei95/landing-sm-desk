@@ -35,7 +35,7 @@ const Window = ({ windowData }: Props) => {
         className={`min-w-full h-full overflow-hidden bg-neutral-100  select-none  flex flex-col`}
       >
         {/* TOP BAR */}
-        <TopBar backBtn folderName={params.slug} />
+        <TopBar backBtn folderName={(params?.slug as string) || ''} />
         <ExecutableContent windowData={windowData} />
       </div>
     </Rnd>

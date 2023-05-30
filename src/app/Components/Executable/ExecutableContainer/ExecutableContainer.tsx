@@ -1,9 +1,11 @@
 'use client';
+import { useState, useEffect } from 'react';
 import FooterBar from '@/app/Components/NewWindow/FooterBar';
 import TopBar from '@/app/Components/NewWindow/TopBar';
 import useResize from '@/hooks/useResize';
 import React from 'react';
-import { Rnd } from 'react-rnd';
+import { Position, Rnd } from 'react-rnd';
+import useHasWindow from '@/hooks/useHasWindow';
 
 type Props = {
   children: React.ReactNode;
@@ -12,9 +14,11 @@ type Props = {
   icon?: React.ReactNode;
   backBtn?: boolean;
   initPosition?: {
-    width: number;
-    height: number;
+    x: number;
+    y: number;
   };
+  windowPosition?: string;
+  overflow?: boolean;
 };
 const ExecutableContainer = ({
   children,
@@ -22,29 +26,52 @@ const ExecutableContainer = ({
   onClose = 'close',
   icon,
   backBtn = false,
-  initPosition = { width: 0, height: 0 },
+  initPosition = { x: 0, y: 0 },
+  windowPosition,
+  overflow = false,
 }: Props) => {
   const { size, setSize } = useResize();
-
+  const [actualPosition, setActualPosition] = useState<Position>(initPosition);
+  const { hasWindow } = useHasWindow();
+  useEffect(() => {
+    console.log(windowPosition);
+    if (windowPosition === 'RIGHT-BOTTOM' && hasWindow) {
+      setActualPosition({
+        x: initPosition.x - size.width,
+        y: initPosition.y - size.height,
+      });
+    }
+    if (windowPosition === 'LEFT-TOP' && hasWindow) {
+      setActualPosition({
+        x: 0,
+        y: 0,
+      });
+    }
+  }, [initPosition, windowPosition]);
   return (
     <Rnd
       style={{
         position: 'absolute',
         overflow: 'hidden',
         pointerEvents: 'all',
+        height: size.height,
       }}
       dragHandleClassName="handle"
       size={{ width: size.width, height: size.height }}
-      // position={{ x: 0, y: screen.width  size.width }}
+      position={actualPosition}
+      onDragStop={(e, d) => {
+        setActualPosition({ x: d.x, y: d.y });
+      }}
       onResize={(e, direction, ref, delta, position) => {
         setSize({
           width: ref.offsetWidth,
           height: ref.offsetHeight,
         });
+        setActualPosition(position);
       }}
     >
       <div
-        className={`min-w-full h-full overflow-hidden bg-neutral-100  select-none  flex flex-col folder-w98-style `}
+        className={`flex flex-col min-w-full w-full h-full overflow-hidden bg-neutral-100  select-none  folder-w98-style `}
       >
         <TopBar
           icon={icon}
@@ -52,7 +79,13 @@ const ExecutableContainer = ({
           backBtn={backBtn}
           folderName={folderName}
         />
-        {children}
+        <div
+          className={`w-full h-full ${
+            overflow ? 'overflow-x-hidden  overflow-y-scroll' : ''
+          }`}
+        >
+          {children}
+        </div>
         <FooterBar />
       </div>
     </Rnd>

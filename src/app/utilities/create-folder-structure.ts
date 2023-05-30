@@ -1,3 +1,5 @@
+import { FlatListItem } from '@/interfaces';
+
 interface menuItemFromAPI {
   nodes: menuItem[];
 }
@@ -12,8 +14,8 @@ interface menuItem {
 export const flatListToHierarchical = (
   data: menuItem[] = [],
   { idKey = 'key', parentKey = 'parentId', childrenKey = 'children' }: any = {}
-) => {
-  if (!data) return null;
+): FlatListItem[] => {
+  if (!data) return [];
   const tree: Array<any> = [];
   const childrenOf: any = {};
   data.forEach((item: menuItem) => {

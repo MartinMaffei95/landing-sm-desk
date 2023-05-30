@@ -67,7 +67,11 @@ const TopBar = ({
           <MdOutlineSquare />
         </div>
 
-        <div onClick={closeAction} className="folder-top-bar-buttons_button">
+        <div
+          onClick={closeAction}
+          onTouchStart={closeAction}
+          className="folder-top-bar-buttons_button"
+        >
           <MdClose />
         </div>
       </div>

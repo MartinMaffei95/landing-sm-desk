@@ -5,7 +5,7 @@ import React from 'react';
 const page = () => {
   return (
     <main className="folder-area flex min-h-screen z-20 p-4 overflow-hidden pointer-events-none">
-      <ExecutableContainer onClose="close" folderName="Contacto">
+      <ExecutableContainer overflow onClose="close" folderName="Contacto">
         <ContactForm />
       </ExecutableContainer>
     </main>

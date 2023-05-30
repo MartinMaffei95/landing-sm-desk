@@ -1,3 +1,4 @@
+import LodaingComponent from '@/app/Components/LoadingComponent/LodaingComponent';
 import MediaPlayerWindow from '@/app/Components/MediaPlayer/MediaPlayerWindow';
 export default function Home() {
   return (

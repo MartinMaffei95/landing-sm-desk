@@ -4,13 +4,13 @@ import { clients } from '@/db';
 const page = () => {
   return (
     <div className="flex">
-      {clients.map((client) => (
+      {/* {clients.map((client) => (
         <ExecutableIcon
           name={client?.id || ''}
           key={client?.id}
           route={`${client?.id}`}
         />
-      ))}
+      ))} */}
     </div>
   );
 };

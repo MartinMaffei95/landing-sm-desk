@@ -5,6 +5,7 @@ const useHasWindow = (): { hasWindow: boolean } => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setHasWindow(true);
+      console.log(window.innerWidth);
     }
   }, []);
   return { hasWindow };
