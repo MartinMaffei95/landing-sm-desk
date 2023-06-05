@@ -11,14 +11,14 @@ import { BiMove } from 'react-icons/bi';
 const FooterBar = () => {
   return (
     <div
-      className={` w-full flex justify-between items-end   ${
+      className={` w-full flex justify-between items-end bg-none absolute bottom-0 left-0 pointer-events-none ${
         false ? 'w10-style' : 'w98-style'
       }`}
     >
-      <div className="bg-neutral-400 p-1 outlined handle">
+      <div className="bg-neutral-400 p-1 outlined handle pointer-events-auto">
         <BiMove />
       </div>
-      <div className="bg-neutral-400 p-1 outlined handle">
+      <div className="bg-neutral-400 p-1 outlined handle pointer-events-auto">
         <BiMove />
       </div>
     </div>

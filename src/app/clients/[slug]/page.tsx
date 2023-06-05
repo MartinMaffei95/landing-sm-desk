@@ -9,6 +9,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
   return (
     <div>
       <ExecutableContainer
+        initPosition={{ x: -60, y: -60 }}
         icon={
           <Image
             src={'/ico/w98/png/notepad-5.png'}

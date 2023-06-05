@@ -53,7 +53,7 @@ const ExecutableContainer = ({
       style={{
         position: 'absolute',
         overflow: 'hidden',
-
+        display: 'flex',
         pointerEvents: 'all',
         height: size.height,
       }}
@@ -72,7 +72,7 @@ const ExecutableContainer = ({
       }}
     >
       <div
-        className={`flex flex-col min-w-full w-full h-full overflow-hidden bg-neutral-100  select-none  folder-w98-style `}
+        className={`flex flex-col min-w-full w-full h-full max-h-full overflow-hidden bg-neutral-100  select-none  folder-w98-style `}
       >
         <TopBar
           icon={icon}
@@ -81,13 +81,13 @@ const ExecutableContainer = ({
           folderName={folderName}
         />
         <div
-          className={`w-full h-full ${
+          className={`min-w-full w-full h-full max-h-full flex flex-col ${
             overflow ? 'overflow-x-hidden  overflow-y-scroll' : ''
           }`}
         >
           {children}
+          <FooterBar />
         </div>
-        <FooterBar />
       </div>
     </Rnd>
   );
