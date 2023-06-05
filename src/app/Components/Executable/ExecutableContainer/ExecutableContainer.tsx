@@ -53,6 +53,7 @@ const ExecutableContainer = ({
       style={{
         position: 'absolute',
         overflow: 'hidden',
+
         pointerEvents: 'all',
         height: size.height,
       }}

@@ -121,10 +121,17 @@ main {
 }
 
 .html-wp-content {
-  @apply p-8 flex flex-col;
+  @apply p-8 py-12 flex flex-col gap-4 bg-neutral-200;
 }
 .html-wp-content p {
   @apply self-start m-2;
+}
+
+.wp-block-columns.column {
+  @apply flex flex-col gap-4;
+}
+.wp-block-button__link.wp-element-button {
+  @apply flex gap-4 justify-start items-center p-2 shadow-md bg-neutral-50 rounded-md hover:bg-neutral-100 hover:shadow-lg;
 }
 /* .wp-block-image .size-full {
 } */
