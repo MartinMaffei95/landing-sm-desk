@@ -46,7 +46,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
       }}
     >
       <div
-        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col overflow-hidden`}
+        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col `}
       >
         {/* TOP BAR */}
         <TopBar folderName={folderName} />
@@ -55,7 +55,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         <LocationBar adress={pathname} />
 
         {/* FOLDER VIEW */}
-        <div className="folder-grid-area w-full max-h-full h-full overflow-hidden">
+        <div className="folder-grid-area w-full max-h-full h-full ">
           {/* ASIDE MENU */}
           <AsideMenu entries={posts} />
           {/* MAIN VIEW */}
@@ -70,7 +70,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
             {children}
           </div>
         </div>
-        <FooterBar />
+        {/* <FooterBar /> */}
       </div>
     </Rnd>
   );
