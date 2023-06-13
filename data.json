@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Shell el Cencerro",
+    "div": "<p><span class=\"description_title\">Año:</span> 2020</p><p><span class=\"description_title\">Duración:</span> 2 meses</p><p><span class=\"description_title\">Descripción:</span> Gastronomía - Armado de sitio web</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Almacén digital",
+    "div": "<p><span class=\"description_title\">Año:</span> 2020</p><p><span class=\"description_title\">Duración:</span> 1 mes</p><p><span class=\"description_title\">Descripción:</span> Gastronomía - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Maderera",
+    "div": "<p><span class=\"description_title\">Año:</span> 2020</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Construcción - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Matedulab",
+    "div": "<p><span class=\"description_title\">Año:</span> 2020</p><p><span class=\"description_title\">Duración:</span> 3 meses</p><p><span class=\"description_title\">Descripción:</span> Académico - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Tauro Pisos",
+    "div": "<p><span class=\"description_title\">Año:</span> 2021</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Construcción/Industria - estrategia de contenido digital/Armado de sitio web</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Wet4fun",
+    "div": "<p><span class=\"description_title\">Año:</span> 2021</p><p><span class=\"description_title\">Duración:</span> 3 meses</p><p><span class=\"description_title\">Descripción:</span> Deportes - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> Ibiza</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Capsen",
+    "div": "<p><span class=\"description_title\">Año:</span> 2021</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Arquitectura - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> EEUU</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Avalon",
+    "div": "<p><span class=\"description_title\">Año:</span> 2021</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Barbería - estrategia de contenido digital/Armado de sitio web</p><p><span class=\"description_title\">Ubicación:</span> EEUU</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Estudio Rc",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> 1 mes</p><p><span class=\"description_title\">Descripción:</span> Construcción - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Cooperativa Eléctrica",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Servicios, electricidad - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Trade Solutions",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Retail - estrategia de contenido digital/Armado de sitio web</p><p><span class=\"description_title\">Ubicación:</span> Perú/Ecuador</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Laleliloluz",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Educación/Cultura - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Espacio Salud",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Salud - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> Comodoro Rivadavia</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Gidema",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Industria - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Dog Soul",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Animales - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "La Tablita",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> 1 mes</p><p><span class=\"description_title\">Descripción:</span> Gastronomía - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "OMH",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Arquitectura - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "The Wrapee",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Gastronomía - estrategia de contenido digital</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  },
+  {
+    "title": "Corralón Las Campanas",
+    "div": "<p><span class=\"description_title\">Año:</span> 2022</p><p><span class=\"description_title\">Duración:</span> actualidad</p><p><span class=\"description_title\">Descripción:</span> Construcción/Industria - Armado de sitio web</p><p><span class=\"description_title\">Ubicación:</span> BsAs</p>",
+    "categories": ["clients"]
+  }
+]

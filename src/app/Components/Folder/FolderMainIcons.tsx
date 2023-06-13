@@ -17,7 +17,7 @@ const FolderMainIcons = ({ entries }: { entries: FlatListItem | null }) => {
   console.log('entries >>>', entries?.children[0].attachement);
 
   return (
-    <div className="flex items-start  gap-4 p-4 w-full h-full overflow-scroll ">
+    <div className="flex items-start flex-wrap gap-4 p-4  ">
       {entries
         ? entries?.children?.map((child) => (
             <DirectAccess

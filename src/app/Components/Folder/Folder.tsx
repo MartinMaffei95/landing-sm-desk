@@ -8,6 +8,7 @@ import AsideMenu from '@/app/Components/Folder/AsideMenu';
 import useResize from '@/hooks/useResize';
 import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons';
 import { FlatListItem } from '@/interfaces';
+import FooterBar from '@/app/Components/NewWindow/FooterBar';
 
 type Props = {
   children: React.ReactNode;
@@ -45,7 +46,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
       }}
     >
       <div
-        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col`}
+        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col overflow-hidden`}
       >
         {/* TOP BAR */}
         <TopBar folderName={folderName} />
@@ -54,11 +55,11 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         <LocationBar adress={pathname} />
 
         {/* FOLDER VIEW */}
-        <div className="folder-grid-area">
+        <div className="folder-grid-area w-full max-h-full h-full overflow-hidden">
           {/* ASIDE MENU */}
           <AsideMenu entries={posts} />
           {/* MAIN VIEW */}
-          <div className="text-neutral-900   bg-neutral-100  folder-main">
+          <div className="text-neutral-900 h-full  bg-neutral-100 w-full overflow-scroll folder-main">
             <FolderMainIcons
               entries={
                 posts?.find((entry: FlatListItem) =>
@@ -69,6 +70,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
             {children}
           </div>
         </div>
+        <FooterBar />
       </div>
     </Rnd>
   );

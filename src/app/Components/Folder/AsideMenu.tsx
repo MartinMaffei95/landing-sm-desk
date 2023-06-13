@@ -18,9 +18,9 @@ const AsideMenu = ({ entries }: { entries: any }) => {
       // W10
       // className="text-neutral-100 bg-neutral-900 basis-1/4"
       // W98
-      className="text-neutral-950 bg-neutral-100  folder-aside border-r-2 border-r-neutral-500"
+      className="text-neutral-950 bg-neutral-100  folder-aside border-r-2 border-r-neutral-500  overflow-scroll"
     >
-      <ul>
+      <ul className="h-full">
         {entries?.map((section: any) => (
           <li className="flex items-center gap-1 " key={section.key}>
             <div className="">
