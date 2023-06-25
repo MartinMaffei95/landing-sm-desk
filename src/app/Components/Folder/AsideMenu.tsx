@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { FcFolder } from 'react-icons/fc';
-import { VscBlank } from 'react-icons/vsc';
-import { MdChevronRight } from 'react-icons/md';
-import Image from 'next/image';
-import Link from 'next/link';
-import { getSlug } from '@/app/utilities/create-folder-structure';
-import Wicon from '@/app/Components/WIcon/Wicon';
-import StructureIcon from '@/app/Components/WIcon/StructureIcon';
+import React, { useState } from 'react'
+import { FcFolder } from 'react-icons/fc'
+import { VscBlank } from 'react-icons/vsc'
+import { MdChevronRight } from 'react-icons/md'
+import Image from 'next/image'
+import Link from 'next/link'
+import { getSlug } from '@/app/utilities/create-folder-structure'
+import Wicon from '@/app/Components/WIcon/Wicon'
+import StructureIcon from '@/app/Components/WIcon/StructureIcon'
+import { transformName } from '@/app/utilities/transform-title-name'
 
 const AsideMenu = ({ entries }: { entries: any }) => {
   type OpenTabs = {
-    [key: string]: boolean;
-  };
-  const [openTabs, setOpenTabs] = useState<OpenTabs>({});
+    [key: string]: boolean
+  }
+  console.log('entries >>>', entries)
+
+  const [openTabs, setOpenTabs] = useState<OpenTabs>({})
   return (
     <div
       // W10
@@ -26,13 +29,13 @@ const AsideMenu = ({ entries }: { entries: any }) => {
             <div className="">
               <div
                 onClick={() => {
-                  console.log(section.key);
+                  console.log(section.key)
                   setOpenTabs((state) => ({
                     ...state,
                     [section.key]: !openTabs[section.key],
-                  }));
+                  }))
                 }}
-                className={`flex items-center gap-1 ${
+                className={`flex items-center gap-1 capitalize ${
                   openTabs[section?.key] ? '' : ''
                 }`}
               >
@@ -44,7 +47,9 @@ const AsideMenu = ({ entries }: { entries: any }) => {
                   <VscBlank />
                 )}
                 <Wicon size={16} />
-                <p className=" overflow-hidden truncate">{section?.title}</p>
+                <p className=" overflow-hidden truncate">
+                  {transformName(section?.title)}
+                </p>
               </div>
               {section?.children && !openTabs[section?.key] ? (
                 <ul>
@@ -88,7 +93,7 @@ const AsideMenu = ({ entries }: { entries: any }) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default AsideMenu;
+export default AsideMenu

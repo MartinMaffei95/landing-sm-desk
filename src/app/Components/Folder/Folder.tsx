@@ -1,29 +1,29 @@
-'use client';
-import React, { useState } from 'react';
-import { useParams, usePathname } from 'next/navigation';
-import TopBar from '@/app/Components/NewWindow/TopBar';
-import { Rnd } from 'react-rnd';
-import LocationBar from '@/app/Components/Folder/LocationBar';
-import AsideMenu from '@/app/Components/Folder/AsideMenu';
-import useResize from '@/hooks/useResize';
-import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons';
-import { FlatListItem } from '@/interfaces';
-import FooterBar from '@/app/Components/NewWindow/FooterBar';
+'use client'
+import React, { useState } from 'react'
+import { useParams, usePathname } from 'next/navigation'
+import TopBar from '@/app/Components/NewWindow/TopBar'
+import { Rnd } from 'react-rnd'
+import LocationBar from '@/app/Components/Folder/LocationBar'
+import AsideMenu from '@/app/Components/Folder/AsideMenu'
+import useResize from '@/hooks/useResize'
+import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons'
+import { FlatListItem } from '@/interfaces'
+import FooterBar from '@/app/Components/NewWindow/FooterBar'
 
 type Props = {
-  children: React.ReactNode;
-  folderName: string;
-  posts?: FlatListItem[];
-  executables?: React.ReactNode;
-};
+  children: React.ReactNode
+  folderName: string
+  posts?: FlatListItem[]
+  executables?: React.ReactNode
+}
 const Folder = ({ children, folderName = '', posts, executables }: Props) => {
   // const [size, setSize] = useState({ width: 800, height: 450 });
-  const { size, setSize } = useResize();
+  const { size, setSize } = useResize()
 
-  let pathname = usePathname();
-  let params = useParams();
+  let pathname = usePathname()
+  let params = useParams()
 
-  console.log();
+  console.log()
 
   return (
     <Rnd
@@ -42,11 +42,11 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         setSize({
           width: ref.offsetWidth,
           height: ref.offsetHeight,
-        });
+        })
       }}
     >
       <div
-        className={`min-w-full   h-full   select-none folder-w98-style bg-red-600 flex flex-col `}
+        className={`min-w-full   h-full   select-none folder-w98-style  flex flex-col `}
       >
         {/* TOP BAR */}
         <TopBar folderName={folderName} />
@@ -55,11 +55,14 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         <LocationBar adress={pathname} />
 
         {/* FOLDER VIEW */}
-        <div className="folder-grid-area w-full max-h-full h-full ">
+        <div className="folder-grid-area w-full max-h-full h-full overflow-hidden">
           {/* ASIDE MENU */}
           <AsideMenu entries={posts} />
           {/* MAIN VIEW */}
-          <div className="text-neutral-900 h-full  bg-neutral-100 w-full overflow-scroll folder-main">
+          <div
+            className="text-neutral-900 h-full  bg-neutral-100 w-full overflow-scroll folder-main 
+          "
+          >
             <FolderMainIcons
               entries={
                 posts?.find((entry: FlatListItem) =>
@@ -67,13 +70,13 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
                 ) || null
               }
             />
-            {children}
           </div>
         </div>
+        {children}
         {/* <FooterBar /> */}
       </div>
     </Rnd>
-  );
-};
+  )
+}
 
-export default Folder;
+export default Folder

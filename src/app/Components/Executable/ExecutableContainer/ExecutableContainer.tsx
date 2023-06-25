@@ -1,25 +1,25 @@
-'use client';
-import { useState, useEffect } from 'react';
-import FooterBar from '@/app/Components/NewWindow/FooterBar';
-import TopBar from '@/app/Components/NewWindow/TopBar';
-import useResize from '@/hooks/useResize';
-import React from 'react';
-import { Position, Rnd } from 'react-rnd';
-import useHasWindow from '@/hooks/useHasWindow';
+'use client'
+import { useState, useEffect } from 'react'
+import FooterBar from '@/app/Components/NewWindow/FooterBar'
+import TopBar from '@/app/Components/NewWindow/TopBar'
+import useResize from '@/hooks/useResize'
+import React from 'react'
+import { Position, Rnd } from 'react-rnd'
+import useHasWindow from '@/hooks/useHasWindow'
 
 type Props = {
-  children: React.ReactNode;
-  folderName?: string;
-  onClose?: 'close' | 'back' | Function;
-  icon?: React.ReactNode;
-  backBtn?: boolean;
+  children: React.ReactNode
+  folderName?: string
+  onClose?: 'close' | 'back' | Function
+  icon?: React.ReactNode
+  backBtn?: boolean
   initPosition?: {
-    x: number;
-    y: number;
-  };
-  windowPosition?: string;
-  overflow?: boolean;
-};
+    x: number
+    y: number
+  }
+  windowPosition?: string
+  overflow?: boolean
+}
 const ExecutableContainer = ({
   children,
   folderName = '',
@@ -30,24 +30,24 @@ const ExecutableContainer = ({
   windowPosition,
   overflow = false,
 }: Props) => {
-  const { size, setSize } = useResize();
-  const [actualPosition, setActualPosition] = useState<Position>(initPosition);
-  const { hasWindow } = useHasWindow();
+  const { size, setSize } = useResize()
+  const [actualPosition, setActualPosition] = useState<Position>(initPosition)
+  const { hasWindow } = useHasWindow()
   useEffect(() => {
-    console.log(windowPosition);
+    console.log(windowPosition)
     if (windowPosition === 'RIGHT-BOTTOM' && hasWindow) {
       setActualPosition({
         x: initPosition.x - size.width,
         y: initPosition.y - size.height,
-      });
+      })
     }
     if (windowPosition === 'LEFT-TOP' && hasWindow) {
       setActualPosition({
         x: 0,
         y: 0,
-      });
+      })
     }
-  }, [initPosition, windowPosition]);
+  }, [initPosition, windowPosition])
   return (
     <Rnd
       style={{
@@ -61,14 +61,14 @@ const ExecutableContainer = ({
       size={{ width: size.width, height: size.height }}
       position={actualPosition}
       onDragStop={(e, d) => {
-        setActualPosition({ x: d.x, y: d.y });
+        setActualPosition({ x: d.x, y: d.y })
       }}
       onResize={(e, direction, ref, delta, position) => {
         setSize({
           width: ref.offsetWidth,
           height: ref.offsetHeight,
-        });
-        setActualPosition(position);
+        })
+        setActualPosition(position)
       }}
     >
       <div
@@ -81,7 +81,7 @@ const ExecutableContainer = ({
           folderName={folderName}
         />
         <div
-          className={`min-w-full w-full h-full max-h-full flex flex-col ${
+          className={`min-w-full w-full h-full max-h-full flex flex-col font-sans ${
             overflow ? 'overflow-x-hidden  overflow-y-scroll' : ''
           }`}
         >
@@ -90,7 +90,7 @@ const ExecutableContainer = ({
         </div>
       </div>
     </Rnd>
-  );
-};
+  )
+}
 
-export default ExecutableContainer;
+export default ExecutableContainer

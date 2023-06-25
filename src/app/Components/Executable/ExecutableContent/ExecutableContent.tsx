@@ -1,16 +1,16 @@
-'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import parse from 'html-react-parser';
-import { mq } from '@/config/mediaQueries';
-import useMediaQuery from '@/hooks/useMediaQuery';
+'use client'
+import Image from 'next/image'
+import React, { useState } from 'react'
+import parse from 'html-react-parser'
+import { mq } from '@/config/mediaQueries'
+import useMediaQuery from '@/hooks/useMediaQuery'
 
 type Props = {
-  windowData?: any;
-};
+  windowData?: any
+}
 const ExecutableContent = ({ windowData }: Props) => {
-  const [client, setClient] = useState(windowData);
-  const { isPhone, isTablet } = useMediaQuery(mq);
+  const [client, setClient] = useState(windowData)
+  const { isPhone, isTablet } = useMediaQuery(mq)
   return (
     <div className="overflow-hidden executable-content ">
       {/* CONTENT */}
@@ -47,7 +47,7 @@ const ExecutableContent = ({ windowData }: Props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ExecutableContent;
+export default ExecutableContent
