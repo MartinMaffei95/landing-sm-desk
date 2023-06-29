@@ -19,6 +19,10 @@ type Props = {
   }
   windowPosition?: string
   overflow?: boolean
+  initSize?: {
+    initHeight: number
+    initWidht: number
+  }
 }
 const ExecutableContainer = ({
   children,
@@ -29,8 +33,9 @@ const ExecutableContainer = ({
   initPosition = { x: 0, y: 0 },
   windowPosition,
   overflow = false,
+  initSize,
 }: Props) => {
-  const { size, setSize } = useResize()
+  const { size, setSize } = useResize(initSize ? initSize : {})
   const [actualPosition, setActualPosition] = useState<Position>(initPosition)
   const { hasWindow } = useHasWindow()
   useEffect(() => {

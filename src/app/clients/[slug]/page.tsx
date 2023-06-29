@@ -1,11 +1,12 @@
-import ExecutableContainer from '@/app/Components/Executable/ExecutableContainer/ExecutableContainer';
-import ExecutableContent from '@/app/Components/Executable/ExecutableContent/ExecutableContent';
-import { getOnePost } from '@/app/services/fetch-one-post.service';
-import Image from 'next/image';
-import React from 'react';
+import ExecutableContainer from '@/app/Components/Executable/ExecutableContainer/ExecutableContainer'
+import ExecutableContent from '@/app/Components/Executable/ExecutableContent/ExecutableContent'
+import { getOnePost } from '@/app/services/fetch-one-post.service'
+import useMediaQuery from '@/hooks/useMediaQuery'
+import Image from 'next/image'
+import React from 'react'
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const data = await getOnePost(`${params.slug}`);
+  const data = await getOnePost(`${params.slug}`)
   return (
     <div>
       <ExecutableContainer
@@ -24,7 +25,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         <ExecutableContent windowData={data.data.post} />
       </ExecutableContainer>
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default page
