@@ -11,9 +11,10 @@ type Props = {
   name: string
   icon?: string
   route: string
+  id?: string
   //   open?: boolean;
 }
-const DirectAccess = ({ name, icon, route = '/' }: Props) => {
+const DirectAccess = ({ name, icon, route = '/', id }: Props) => {
   let router = useRouter()
   const pathname = usePathname()
   const { isPhone, isTablet } = useMediaQuery(mq)
@@ -32,6 +33,7 @@ const DirectAccess = ({ name, icon, route = '/' }: Props) => {
   }
   return (
     <div
+      id={id}
       onClick={isPhone || isTablet ? openFolder : handleSelect}
       onDoubleClick={openFolder}
       className={`flex flex-col justify-center items-center menu-navigation-item  ${

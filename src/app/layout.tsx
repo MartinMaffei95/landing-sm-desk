@@ -48,6 +48,7 @@ export default async function RootLayout({
             <DirectAccess route="/about" name="Nosotros" />
 
             <DirectAccess
+              id={'contact_form_id'}
               icon={'/ico/w98/ico/mailbox_world.ico'}
               route="/contact"
               name="Contactanos"
