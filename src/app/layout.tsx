@@ -28,9 +28,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <GoogleTagManagerHead
-        GTM_CONTAINER_ID={process?.env?.GTM_CONTAINER_ID || ''}
-      />
+      <head>
+        <GoogleTagManagerHead
+          GTM_CONTAINER_ID={process?.env?.GTM_CONTAINER_ID || ''}
+        />
+      </head>
+
       <GoogleTagManagerBody
         GTM_CONTAINER_ID={process?.env?.GTM_CONTAINER_ID || ''}
       />
