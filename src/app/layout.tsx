@@ -42,7 +42,7 @@ export default async function RootLayout({
         className={`grid-body-wrapper max-w-screen max-h-screen overflow-hidden font-w98 `}
       >
         <header className="flex min-h-sreen items-start justify-start icons-area p-4">
-          <nav className="flex gap-4 fixed bottom-0 left-0 w-full sm:flex-col sm:static">
+          <nav className="flex flex-wrap gap-4 fixed bottom-0 left-0  sm:flex-col sm:static w-screen md:w-full">
             <DirectAccess route="/clients" name="Clientes" />
 
             <DirectAccess route="/about" name="Nosotros" />
@@ -52,6 +52,11 @@ export default async function RootLayout({
               icon={'/ico/w98/ico/mailbox_world.ico'}
               route="/contact"
               name="Contactanos"
+            />
+            <DirectAccess
+              icon={'/ico/w98/ico/help_book_big.ico'}
+              route="/courses"
+              name="Nuestros Cursos"
             />
           </nav>
         </header>

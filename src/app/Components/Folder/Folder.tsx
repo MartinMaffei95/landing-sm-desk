@@ -46,7 +46,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
       }}
     >
       <div
-        className={`min-w-full   h-full   select-none folder-w98-style  flex flex-col `}
+        className={`min-w-full   h-full   select-none folder-w98-style  flex flex-col font-sans`}
       >
         {/* TOP BAR */}
         <TopBar folderName={folderName} />

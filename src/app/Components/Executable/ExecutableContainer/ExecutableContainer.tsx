@@ -23,6 +23,7 @@ type Props = {
     initHeight: number
     initWidht: number
   }
+  onResize?: (ref: HTMLElement) => void
 }
 const ExecutableContainer = ({
   children,
@@ -34,6 +35,7 @@ const ExecutableContainer = ({
   windowPosition,
   overflow = false,
   initSize,
+  onResize,
 }: Props) => {
   const { size, setSize } = useResize(initSize ? initSize : {})
   const [actualPosition, setActualPosition] = useState<Position>(initPosition)
@@ -73,6 +75,7 @@ const ExecutableContainer = ({
           width: ref.offsetWidth,
           height: ref.offsetHeight,
         })
+        onResize && onResize(ref)
         setActualPosition(position)
       }}
     >

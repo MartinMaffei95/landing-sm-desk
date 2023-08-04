@@ -7,6 +7,7 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 import React from 'react'
 import useHasWindow from '@/hooks/useHasWindow'
 import { FaPlayCircle } from 'react-icons/fa'
+import Image from 'next/image'
 
 const MediaPlayerWindow = () => {
   const { innerMedia, isBigPhone, isPhone, mediaQuery } = useMediaQuery(mq)
@@ -21,7 +22,7 @@ const MediaPlayerWindow = () => {
         isPhone ? { initHeight: 400, initWidht: innerMedia?.x || 0 } : undefined
       }
       icon={
-        <FaPlayCircle className="flex items-center justify-center text-3xl" />
+        <Image width={36} height={36} alt="wm icon" src="/ico/w98/ico/wm.ico" />
       }
       folderName="SocialMedia Player"
     >

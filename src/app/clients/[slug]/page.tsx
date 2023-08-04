@@ -1,7 +1,6 @@
 import ExecutableContainer from '@/app/Components/Executable/ExecutableContainer/ExecutableContainer'
 import ExecutableContent from '@/app/Components/Executable/ExecutableContent/ExecutableContent'
 import { getOnePost } from '@/app/services/fetch-one-post.service'
-import useMediaQuery from '@/hooks/useMediaQuery'
 import Image from 'next/image'
 import React from 'react'
 

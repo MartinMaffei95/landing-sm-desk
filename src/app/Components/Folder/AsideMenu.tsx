@@ -21,7 +21,7 @@ const AsideMenu = ({ entries }: { entries: any }) => {
       // W10
       // className="text-neutral-100 bg-neutral-900 basis-1/4"
       // W98
-      className="text-neutral-950 bg-neutral-100  folder-aside border-r-2 border-r-neutral-500  overflow-scroll"
+      className="text-neutral-950 bg-neutral-100  folder-aside border-r-2 border-r-neutral-500  overflow-scroll font-sans"
     >
       <ul className="h-full">
         {entries?.map((section: any) => (

@@ -1,6 +1,6 @@
-'use client';
-import { useForm } from 'react-hook-form';
-import React, { useState } from 'react';
+'use client'
+import { useForm } from 'react-hook-form'
+import React, { useState } from 'react'
 
 const ContactForm = () => {
   const initialValues: ContactData = {
@@ -12,23 +12,23 @@ const ContactForm = () => {
     phone: '',
     category: '',
     message: '',
-  };
+  }
   const { register, handleSubmit } = useForm({
     defaultValues: initialValues,
-  });
+  })
 
   type ContactData = {
-    firstName: string;
-    secondName: string;
-    mail: string;
-    company: string;
-    country: string;
-    phone: string;
-    category: string;
-    message: string;
-  };
+    firstName: string
+    secondName: string
+    mail: string
+    company: string
+    country: string
+    phone: string
+    category: string
+    message: string
+  }
   const onSubmit = (data: ContactData) => {
-    console.log(data);
+    console.log(data)
     fetch('http://localhost:3000/api/mail', {
       method: 'POST',
       headers: {
@@ -37,11 +37,11 @@ const ContactForm = () => {
       body: JSON.stringify(data),
     })
       .then((res) => {
-        if (!res.ok) throw new Error('Failed to send message');
-        return res.json();
+        if (!res.ok) throw new Error('Failed to send message')
+        return res.json()
       })
-      .then((data) => console.log(data));
-  };
+      .then((data) => console.log(data))
+  }
   return (
     <>
       <div className="w-full flex flex-col justify- items-center text-center m-4 ">
@@ -63,11 +63,7 @@ const ContactForm = () => {
           <input {...register('country')} placeholder="País" />
           <input {...register('phone')} placeholder="Teléfono" />
         </div>
-        <select {...register('category')}>
-          <option value="">Como nos conociste?</option>
-          <option value="A">Option A</option>
-          <option value="B">Option B</option>
-        </select>
+
         <textarea
           className="h-[20vh] p-4"
           {...register('message')}
@@ -76,7 +72,7 @@ const ContactForm = () => {
         <input type="submit" />
       </form>
     </>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
