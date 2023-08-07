@@ -2,7 +2,6 @@ import './globals.css'
 import { DM_Sans, Open_Sans } from 'next/font/google'
 
 import DirectAccess from '@/app/Components/DirectAccess/DirectAccess'
-import { FiAtSign } from 'react-icons/fi'
 import Image from 'next/image'
 import GoogleAnalytics from '@/app/Components/GoogleAnalitycs/GoogleAnalitycs'
 import GoogleTagManagerHead from '@/app/Components/GoogleAnalitycs/GoogleTagManagerHead'

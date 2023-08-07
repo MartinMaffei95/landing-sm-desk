@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 const useHasWindow = (): { hasWindow: boolean } => {
-  const [hasWindow, setHasWindow] = useState<boolean>(false);
+  const [hasWindow, setHasWindow] = useState<boolean>(false)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setHasWindow(true);
-      console.log(window.innerWidth);
+      setHasWindow(true)
     }
-  }, []);
-  return { hasWindow };
-};
-export default useHasWindow;
+  }, [])
+  return { hasWindow }
+}
+export default useHasWindow

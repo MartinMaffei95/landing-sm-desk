@@ -1,9 +1,9 @@
-import LoaderFolder from '@/app/Components/Folder/LoaderFolder';
-import LodaingComponent from '@/app/Components/LoadingComponent/LodaingComponent';
-import React from 'react';
+import LoaderFolder from '@/app/Components/Folder/LoaderFolder'
+import LoadingComponent from '@/app/Components/LoadingComponent/LodaingComponent'
+import React from 'react'
 
 const loading = () => {
-  return <LodaingComponent />;
-};
+  return <LoadingComponent />
+}
 
-export default loading;
+export default loading

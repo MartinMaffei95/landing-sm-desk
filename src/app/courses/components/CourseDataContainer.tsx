@@ -43,7 +43,7 @@ const CourseDataContainer: FC<Props> = ({ width }) => {
           fill
           className="object-cover center"
           alt="courses hero"
-          src={'/images/courses-hero-woman.jpg'}
+          src={'/images/courses-hero-woman.webp'}
         />
       </aside>
     </section>
