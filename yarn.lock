@@ -46,6 +46,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.38.0.tgz#73a8a0d8aa8a8e6fe270431c5e72ae91b5337892"
   integrity sha512-IoD2MfUnOV58ghIHCiil01PcohxjbYR/qCxsoC+xNgUwh1EY8jOOrYmu3d3a71+tJJ23uscEV4X2HJWMsPJu4g==
 
+"@hookform/resolvers@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.2.0.tgz#0f48f57d464a216fa4a2d76b0f1317b91f91e99b"
+  integrity sha512-skXQHhLxq0Sz2xDwCyv5dygBCtXJe1GmWwxDzfdtl0X6agD6qcyTG8HrZWkjJoy8AkiLARqYvSYJ8z7+Nwmi7w==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.10.tgz#5a3ffe32cc9306365fb3fd572596cd602d5e12d2"
@@ -108,11 +113,6 @@
   integrity sha512-RpZeXlPxQ9FLeYN84XHDqRN20XxmVNclYCraLYdifRsmibtcWUWdwE/ANp2C8kgesFRsvwfsw6eOkYNl9sLJ3A==
   dependencies:
     glob "7.1.7"
-
-"@next/font@^13.3.0":
-  version "13.4.13"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.4.13.tgz#8cce689ab8064bfcb6e9d273889c4ad180f58f2e"
-  integrity sha512-jzjUvjO967E2XWku5aImWRVApGwsTJZPp3lY5yFNWZHMkoNNKU9fsTEAhWVcKxCOYmHmSX1n2E09VkzuFdF48Q==
 
 "@next/swc-darwin-arm64@13.4.13":
   version "13.4.13"
@@ -586,7 +586,7 @@ client-only@0.0.1:
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
-clsx@^1.1.1:
+clsx@^1.1.0, clsx@^1.1.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
@@ -1274,6 +1274,11 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+goober@^2.0.33:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.13.tgz#e3c06d5578486212a76c9eba860cbc3232ff6d7c"
+  integrity sha512-jFj3BQeleOoy7t93E9rZ2de+ScC4lQICLwiAQmKMg9F6roKGaLSHoCDYKkWlSafg138jejvq/mTdvmnwDQgqoQ==
+
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.0.1.tgz#29ff76de69dac7489b7c0918a5788e56477c332c"
@@ -1761,6 +1766,14 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
+
+notistack@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/notistack/-/notistack-3.0.1.tgz#daf59888ab7e2c30a1fa8f71f9cba2978773236e"
+  integrity sha512-ntVZXXgSQH5WYfyU+3HfcXuKaapzAJ8fBLQ/G618rn3yvSzEbnOB8ZSOwhX+dAORy/lw+GC2N061JA0+gYWTVA==
+  dependencies:
+    clsx "^1.1.0"
+    goober "^2.0.33"
 
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
