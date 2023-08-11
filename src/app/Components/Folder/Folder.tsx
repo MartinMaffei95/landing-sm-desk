@@ -33,8 +33,8 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         left: 0,
         pointerEvents: 'all',
       }}
-      disableDragging={pathname.endsWith(params?.slug[0])}
-      enableResizing={!pathname.endsWith(params?.slug[0])}
+      disableDragging={pathname.endsWith(params?.slug as string)}
+      enableResizing={!pathname.endsWith(params?.slug as string)}
       dragHandleClassName="handle"
       size={{ width: size.width, height: size.height }}
       onResize={(e, direction, ref, delta, position) => {
