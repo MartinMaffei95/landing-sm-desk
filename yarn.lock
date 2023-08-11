@@ -2487,6 +2487,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+tozod@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tozod/-/tozod-3.0.0.tgz#ee72eb95de3647076ddc198f5c291b1dc728298e"
+  integrity sha512-R03/moNPEGgWKoTdCsEJuyEoP6NtXyhWg9L9lJhF2XyCR2Ce9XE+yXaswaVmqyBpHsRPC2Pk38mK8Ex7iHaXcg==
+
 ts-api-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.0.1.tgz#8144e811d44c749cd65b2da305a032510774452d"
