@@ -171,7 +171,10 @@ main {
   @apply flex w-full gap-4;
 }
 
-.form input[type='submit'] {
+.form .row-doble .inputContainer {
+  @apply w-full;
+}
+.form .send {
   @apply bg-green-400;
 }
 
