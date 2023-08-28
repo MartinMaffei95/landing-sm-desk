@@ -8,6 +8,7 @@ type Props = {
 const CourseDataContainer: FC<Props> = ({ width }) => {
   return (
     <section
+      id="social-learning-landing"
       className={`flex gap-4 items-center justify-center  w-full h-full ${
         width < 600 ? 'flex-wrap' : ''
       }`}
@@ -29,6 +30,7 @@ const CourseDataContainer: FC<Props> = ({ width }) => {
         <a
           className="bg-green-600 text-xl font-semibold p-2 text-center tracking-wider text-neutral-100 rounded-md"
           target="_blank"
+          id="go-to-sl"
           href="https://learning.socialmedia1989.com.ar"
         >
           Quiero ir a la plataforma!
