@@ -1,8 +1,19 @@
-'use client'
-import { useForm } from 'react-hook-form'
-import React, { useState } from 'react'
-
+'use client';
+import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
+import { ContactData } from '@/interfaces';
+import { FaSpinner } from 'react-icons/fa';
+import { sendEmail } from '@/app/services/send-email';
+import { useSnackbar } from 'notistack';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { validateContactRequest } from '@/app/api/validations/mail.validate';
+import ErrorComponent from '@/app/Components/ErrorComponents/ErrorsComponent';
 const ContactForm = () => {
+  const { enqueueSnackbar } = useSnackbar();
+  const [loading, setLoading] = useState<boolean>(false);
+  const toggleLoading = (state: boolean) => {
+    setLoading(() => state);
+  };
   const initialValues: ContactData = {
     firstName: '',
     secondName: '',
@@ -10,38 +21,44 @@ const ContactForm = () => {
     company: '',
     country: '',
     phone: '',
-    category: '',
     message: '',
-  }
-  const { register, handleSubmit } = useForm({
-    defaultValues: initialValues,
-  })
+  };
+  const schema = validateContactRequest();
 
-  type ContactData = {
-    firstName: string
-    secondName: string
-    mail: string
-    company: string
-    country: string
-    phone: string
-    category: string
-    message: string
-  }
-  const onSubmit = (data: ContactData) => {
-    console.log(data)
-    fetch('http://localhost:3000/api/mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to send message')
-        return res.json()
-      })
-      .then((data) => console.log(data))
-  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: initialValues,
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data: ContactData) => {
+    toggleLoading(true);
+    try {
+      await sendEmail(data);
+      enqueueSnackbar({
+        className: 'font-sans tracking-widest text-2xl font-bold',
+        message: 'Mensaje enviado. Pronto nos pondremos en contacto',
+        variant: 'success',
+        persist: false,
+        autoHideDuration: 2000,
+      });
+      reset();
+    } catch (error) {
+      enqueueSnackbar({
+        className: 'font-sans tracking-widest text-2xl font-bold',
+        message: 'No pudimos enviar tu mensaje :(',
+        variant: 'error',
+        persist: false,
+        autoHideDuration: 2000,
+      });
+    } finally {
+      toggleLoading(false);
+    }
+  };
   return (
     <>
       <div className="w-full flex flex-col justify- items-center text-center m-4 ">
@@ -50,18 +67,48 @@ const ContactForm = () => {
           Nos interesa saber sobre tu proyecto!
         </p>
       </div>
-      <form className="flex flex-col form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="flex flex-col form  " onSubmit={handleSubmit(onSubmit)}>
         <div className="row-doble">
-          <input {...register('firstName')} placeholder="Nombre" />
-          <input {...register('secondName')} placeholder="Apellido" />
+          <div className="inputContainer">
+            <input {...register('firstName')} placeholder="Nombre" />
+            {errors.firstName ? (
+              <ErrorComponent text={errors?.firstName?.message || ''} />
+            ) : null}
+          </div>
+          <div className="inputContainer">
+            <input {...register('secondName')} placeholder="Apellido" />
+            {errors.secondName ? (
+              <ErrorComponent text={errors?.secondName?.message || ''} />
+            ) : null}
+          </div>
         </div>
         <div className="row-doble">
-          <input {...register('mail')} placeholder="Email" />
-          <input {...register('company')} placeholder="Compañia" />
+          <div className="inputContainer">
+            <input {...register('mail')} placeholder="Email" />
+            {errors.mail ? (
+              <ErrorComponent text={errors?.mail?.message || ''} />
+            ) : null}
+          </div>
+          <div className="inputContainer">
+            <input {...register('company')} placeholder="Compañia" />
+            {errors.company ? (
+              <ErrorComponent text={errors?.company?.message || ''} />
+            ) : null}
+          </div>
         </div>
         <div className="row-doble">
-          <input {...register('country')} placeholder="País" />
-          <input {...register('phone')} placeholder="Teléfono" />
+          <div className="inputContainer">
+            <input {...register('country')} placeholder="País" />
+            {errors.country ? (
+              <ErrorComponent text={errors?.country?.message || ''} />
+            ) : null}
+          </div>
+          <div className="inputContainer">
+            <input {...register('phone')} placeholder="Teléfono" />
+            {errors.phone ? (
+              <ErrorComponent text={errors?.phone?.message || ''} />
+            ) : null}
+          </div>
         </div>
 
         <textarea
@@ -69,10 +116,23 @@ const ContactForm = () => {
           {...register('message')}
           placeholder="Tu mensaje"
         />
-        <input type="submit" />
+        {errors.message ? (
+          <ErrorComponent text={errors?.message?.message || ''} />
+        ) : null}
+        {/* <input type="submit" /> */}
+        <button
+          disabled={loading}
+          type="submit"
+          className="duration-300 flex items-center justify-center gap-4 hover:bg-green-600 text-xl bg-green-500 text-neutral-200 font-bold tracking-wider py-4 rounded
+          disabled:bg-neutral-400
+          "
+        >
+          {loading ? <FaSpinner className="text-3xl animate-spin" /> : null}{' '}
+          Enviar
+        </button>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

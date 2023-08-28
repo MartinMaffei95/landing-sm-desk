@@ -1,29 +1,28 @@
-'use client'
-import React, { useState } from 'react'
-import { useParams, usePathname } from 'next/navigation'
-import TopBar from '@/app/Components/NewWindow/TopBar'
-import { Rnd } from 'react-rnd'
-import LocationBar from '@/app/Components/Folder/LocationBar'
-import AsideMenu from '@/app/Components/Folder/AsideMenu'
-import useResize from '@/hooks/useResize'
-import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons'
-import { FlatListItem } from '@/interfaces'
-import FooterBar from '@/app/Components/NewWindow/FooterBar'
+'use client';
+import React, { useState } from 'react';
+import { useParams, usePathname } from 'next/navigation';
+import TopBar from '@/app/Components/NewWindow/TopBar';
+import { Rnd } from 'react-rnd';
+import LocationBar from '@/app/Components/Folder/LocationBar';
+import AsideMenu from '@/app/Components/Folder/AsideMenu';
+import useResize from '@/hooks/useResize';
+import FolderMainIcons from '@/app/Components/Folder/FolderMainIcons';
+import { FlatListItem } from '@/interfaces';
 
 type Props = {
-  children: React.ReactNode
-  folderName: string
-  posts?: FlatListItem[]
-  executables?: React.ReactNode
-}
+  children: React.ReactNode;
+  folderName: string;
+  posts?: FlatListItem[];
+  executables?: React.ReactNode;
+};
 const Folder = ({ children, folderName = '', posts, executables }: Props) => {
   // const [size, setSize] = useState({ width: 800, height: 450 });
-  const { size, setSize } = useResize()
+  const { size, setSize } = useResize();
 
-  let pathname = usePathname()
-  let params = useParams()
+  let pathname = usePathname();
+  let params = useParams();
 
-  console.log()
+  console.log();
 
   return (
     <Rnd
@@ -34,15 +33,15 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         left: 0,
         pointerEvents: 'all',
       }}
-      disableDragging={pathname.endsWith(params?.slug)}
-      enableResizing={!pathname.endsWith(params?.slug)}
+      disableDragging={pathname.endsWith(params?.slug as string)}
+      enableResizing={!pathname.endsWith(params?.slug as string)}
       dragHandleClassName="handle"
       size={{ width: size.width, height: size.height }}
       onResize={(e, direction, ref, delta, position) => {
         setSize({
           width: ref.offsetWidth,
           height: ref.offsetHeight,
-        })
+        });
       }}
     >
       <div
@@ -76,7 +75,7 @@ const Folder = ({ children, folderName = '', posts, executables }: Props) => {
         {/* <FooterBar /> */}
       </div>
     </Rnd>
-  )
-}
+  );
+};
 
-export default Folder
+export default Folder;
